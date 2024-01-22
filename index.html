@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    
+
+    <style>
+        body {
+            font-family: 'Digital', sans-serif;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #035e03;
+        }
+
+        #time, #date {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Digital">
+</head>
+<body>
+    <p>Current time: <span id="time"></span></p>
+    <p>Current date: <span id="date"></span></p>
+
+  
+
+<script>
+    setInterval(() => {
+        const now = new Date();
+        const time = now.getHours() + " : " + now.getMinutes() + " : " + now.getSeconds() + " ";
+        document.getElementById('time').innerHTML = time;
+        document.getElementById('date').innerHTML = now.getDate()+"/"+now.getMonth()+"/"+now.getFullYear();
+    }, 500);
+</script>
+</body>
+</html>
+
